@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali - Our Family</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    font-family: Georgia, serif;
+    color: #fff1ce;
+    background:
+        radial-gradient(circle at top, #8c271c, #390b13 55%, #16050b);
+    overflow-x: hidden;
+}
+
+.card {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    padding: 55px 30px;
+    text-align: center;
+    border: 3px double #eac36d;
+    border-radius: 25px;
+    background: linear-gradient(145deg,
+        rgba(105, 19, 20, .96),
+        rgba(36, 5, 14, .98));
+    box-shadow: 0 0 35px #e9ae48aa,
+                inset 0 0 30px #ffd77a22;
+}
+
+.top {
+    color: #f8d68c;
+    letter-spacing: 6px;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    margin: 25px 0;
+    color: #ffdf8a;
+    text-shadow: 0 0 12px #ffbc3e,
+                 0 0 35px #ff8c00;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 25px #ffdf8a,
+                     0 0 55px #ff9900;
+    }
+}
+
+.subtitle {
+    color: #ffe4a9;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+.diyas {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 35px 0;
+}
+
+.diya {
+    font-size: 58px;
+    filter: drop-shadow(0 0 15px orange);
+    animation: float 2s infinite alternate;
+}
+
+.diya:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.diya:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    to { transform: translateY(-13px); }
+}
+
+.lotus {
+    font-size: 65px;
+    margin: 20px 0;
+    filter: drop-shadow(0 0 12px pink);
+}
+
+.decor {
+    color: #ffdb86;
+    font-size: 27px;
+    letter-spacing: 12px;
+    margin: 28px 0;
+}
+
+.message {
+    max-width: 650px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 2;
+    color: #fff0d2;
+}
+
+.family {
+    color: #ffdc91;
+    font-size: 26px;
+    font-style: italic;
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+.footer {
+    margin-top: 40px;
+    color: #eac98b;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: 2px solid #ffe3a0;
+    border-radius: 35px;
+    background: linear-gradient(45deg, #d99a32, #ffe4a0);
+    color: #54100e;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #ffd36c;
+}
+
+.sparkle {
+    position: fixed;
+    top: -30px;
+    color: #ffdf8a;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 5;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .card { padding: 40px 18px; }
+    .message { font-size: 16px; }
+    .diya { font-size: 43px; }
+    .diyas { gap: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="top">✦ A FESTIVAL OF LIGHTS ✦</div>
+
+    <h1>Happy Diwali!</h1>
+
+    <div class="subtitle">
+        May Your Home Shine With Happiness
+    </div>
+
+    <div class="diyas">
+        <div class="diya">🪔</div>
+        <div class="diya">🪔</div>
+        <div class="diya">🪔</div>
+    </div>
+
+    <div class="lotus">🪷</div>
+
+    <div class="decor">✧ ❖ ✧</div>
+
+    <div class="message">
+        May this beautiful festival of lights bring
+        endless happiness, good health, peace and
+        prosperity into our lives.
+
+        <br><br>
+
+        May every diya light up our hearts,
+        every prayer bring us blessings,
+        and every moment be filled with love,
+        laughter and togetherness.
+
+        <br><br>
+
+        May our family always stay united,
+        happy and blessed.
+        May our home forever shine with love!
+    </div>
+
+    <div class="decor">✧ ❖ ✧</div>
+
+    <div class="family">
+        With Love & Warm Wishes
+        <br>
+        ❤️ To Our Beautiful Family ❤️
+    </div>
+
+    <div class="footer">
+        MAY LIGHT, LOVE & HAPPINESS ALWAYS SHINE
+    </div>
+
+    <button onclick="celebrate()">
+        ✨ Celebrate Diwali ✨
+    </button>
+
+</div>
+
+<script>
+function celebrate() {
+    for (let i = 0; i < 60; i++) {
+        const sparkle = document.createElement("div");
+
+        sparkle.className = "sparkle";
+        sparkle.textContent =
+            ["✦", "✨", "✧", "❋"][Math.floor(Math.random() * 4)];
+
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.fontSize =
+            (12 + Math.random() * 22) + "px";
+
+        sparkle.style.animationDuration =
+            (2 + Math.random() * 4) + "s";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 6500);
+    }
+}
+</script>
+
+</body>
+</html>
